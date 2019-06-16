@@ -8,6 +8,8 @@ parser.add_argument('--email-to', '-to', required=True,
                     help='Send low water level alerts to this email.')
 parser.add_argument('--smtp-key', '-k', required=True,
                     help='Path to SMTP key file on disk.')
+parser.add_argument('--message-path', '-m', required=True,
+                    help='Path to email message YAML file.')
 parser.add_argument('--smtp-debug', action='store_true',
                     help=('Print full SMTP conversation with server. '
                           'Useful for debugging.'))
@@ -31,7 +33,7 @@ s, username = connect_smtp_from_config(args.smtp_key,
 info('Load email message contents from disk.')
 msg = create_message_from_yaml(to_addr=args.email_to,
                                from_addr=username,
-                               path='./mail.yml')
+                               path=args.message_path)
 # msg = create_message(EMAIL_TO, username, subject, body)
 
 
