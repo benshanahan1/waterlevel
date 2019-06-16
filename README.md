@@ -20,7 +20,7 @@ Use the CLI:
 
 ```bash
 python cli.py --help
-python cli.py -k /path/to/email.key -to benshanahan1@gmail.com
+python cli.py -k /path/to/email.key -to destination@gmail.com
 ```
 
 For SMTP debugging, add flag `--smtp-debug`. For general verbose output, add flag `--verbose`.
