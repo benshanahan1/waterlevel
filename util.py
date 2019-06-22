@@ -9,7 +9,7 @@ def load_smtp_config(path):
     :param str path: Path to SMTP key file.
     """
     abspath = Path(path).resolve()  # resolve absolute path
-    with open(abspath, 'r') as fd:
+    with open(str(abspath), 'r') as fd:
         config = load(fd, Loader=FullLoader)
         server = config['server']
         port = int(config['port'])

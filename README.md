@@ -3,27 +3,25 @@
 Alert when water drops below a certain level.
 
 
-
 # set up email
 * Create a new email address. [Yahoo Mail](https://mail.yahoo.com/) is recommended since Gmail is painful to get working.
 * Go to [Yahoo Account Security settings](https://login.yahoo.com/account/security) > Account Security and set up 2-step verification.
 * Create a new app password.
 * Create a new key-file to store the username and password: `cp key/email.key.template key/email.key`
+* Set `EMAIL_TO` environment variable so that script knows who to send email to.
 
 
 # install
-...
-
-
-# usage
-Use the CLI:
-
+Install RPi Python library for Python 3:
 ```bash
-python cli.py --help
-python cli.py -k /path/to/email.key -to destination@gmail.com -m /path/to/mail.yml
+sudo apt-get update
+sudo apt-get -y install python3-rpi.gpio
 ```
 
-For SMTP debugging, add flag `--smtp-debug`. For general verbose output, add flag `--verbose`.
+Install Python requirements from file:
+```bash
+sudo pip3 install -r requirements.txt
+```
 
 
 ## creating a key file
@@ -35,6 +33,25 @@ server: smtp.mail.yahoo.com
 port: 587
 username: fake_username
 password: fake_password
+```
+
+
+## configuration
+The following configuration options are available:
+
+```txt
+VARIABLE       DEFAULT
+-------------------------------
+SMTP_KEY       ./key/smtp.key
+SMTP_DEBUG     False
+EMAIL_TO       ''
+MESSAGE_PATH   ./mail.yml
+```
+
+You can set any of these variables by defining them as environment variables. Use the `export` command to do so:
+
+```bash
+export EMAIL_TO='bob@gmail.com'
 ```
 
 
