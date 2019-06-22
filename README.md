@@ -7,7 +7,7 @@ Alert when water drops below a certain level.
 * Create a new email address. [Yahoo Mail](https://mail.yahoo.com/) is recommended since Gmail is painful to get working.
 * Go to [Yahoo Account Security settings](https://login.yahoo.com/account/security) > Account Security and set up 2-step verification.
 * Create a new app password.
-* Create a new key-file to store the username and password: `cp key/email.key.template key/email.key`
+* Create a new key-file to store the username and password: `cp key/smtp.key.template key/smtp.key`
 * Set `EMAIL_TO` environment variable so that script knows who to send email to.
 
 
