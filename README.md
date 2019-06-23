@@ -65,3 +65,9 @@ body: >
     The body content goes here.
     It can be split across multiple lines if you want.
 ```
+
+## install crontab
+Example crontab:
+```cron
+* * * * * SMTP_KEY=/home/pi/waterlevel/key/smtp.key MESSAGE_PATH=/home/pi/waterlevel/mail.yml EMAIL_TO=alice@gmail.com /usr/bin/python3 /home/pi/waterlevel/main.py
+```
