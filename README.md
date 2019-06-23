@@ -67,7 +67,7 @@ body: >
 ```
 
 ## install crontab
-Example crontab:
+Example crontab to run script once per hour:
 ```cron
-* * * * * SMTP_KEY=/home/pi/waterlevel/key/smtp.key MESSAGE_PATH=/home/pi/waterlevel/mail.yml EMAIL_TO=alice@gmail.com /usr/bin/python3 /home/pi/waterlevel/main.py
+0 * * * * SMTP_KEY=/home/pi/waterlevel/key/smtp.key MESSAGE_PATH=/home/pi/waterlevel/mail.yml EMAIL_TO=alice@gmail.com /usr/bin/python3 /home/pi/waterlevel/main.py
 ```
